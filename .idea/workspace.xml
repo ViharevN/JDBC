@@ -5,19 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="220147c7-cbda-467a-add0-5d8ae64c2509" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/configuration/HibernateSessionFactoryUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/CityDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/EmployeeDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/impl/CityDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/impl/EmployeeDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jdbc/JdbcConnection.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/model/City.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/model/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +104,7 @@
       <workItem from="1677101459526" duration="598000" />
       <workItem from="1677175637856" duration="598000" />
       <workItem from="1677258905635" duration="599000" />
-      <workItem from="1678650829235" duration="1429000" />
+      <workItem from="1678650829235" duration="2105000" />
     </task>
     <servers />
   </component>

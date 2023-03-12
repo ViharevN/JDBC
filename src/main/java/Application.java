@@ -1,5 +1,11 @@
 
+import dao.EmployeeDAO;
+import dao.EmployeeDAOImpl;
+import model.City;
+import model.Employee;
+
 import java.sql.*;
+import java.util.List;
 
 public class Application {
 
@@ -14,34 +20,30 @@ public class Application {
 
         // Создаем соединение с базой с помощью Connection
         // Формируем запрос к базе с помощью PreparedStatement
-        try(final Connection connection = DriverManager.getConnection(url, user, pass);
-            PreparedStatement statement = connection.prepareStatement
-                    ("SELECT * FROM employee WHERE id = (?)")) {
+        try (Connection connection = DriverManager.getConnection(url,user,pass)){
 
-            // Подставляем значение вместо wildcard
-            statement.setInt(1, 2);
+            EmployeeDAO employeeDAO = new EmployeeDAOImpl(connection);
 
-            // Делаем запрос к базе и результат кладем в ResultSet
-            final ResultSet resultSet = statement.executeQuery();
+            // 5. Удаление конкретного объекта Employee из базы по id
+            employeeDAO.deleteById(7);
 
-            // Методом next проверяем есть ли следующий элемент в resultSet
-            // и одновременно переходим к нему, если таковой есть
-            while (resultSet.next()) {
+            // 4. Изменение конкретного объекта Employee в базе по id
+            employeeDAO.updateById(7,"Roman", "Romanov", "Male", 57, 3);
 
-                // С помощью методов getInt и getString получаем данные из resultSet
-                String firstNameOfEmployee = "first_name: " + resultSet.getString("first_name");
-                String lastNameOfEmployee = "last_name: " + resultSet.getString("last_name");
-                String genderOfEmployee = "gender: " + resultSet.getString("gender");
-                int ageOfEmployee = resultSet.getInt(5);
-                int cityIdOfEmployee = resultSet.getInt(6);
-
-                // Выводим данные в консоль
-                System.out.println(firstNameOfEmployee);
-                System.out.println(lastNameOfEmployee);
-                System.out.println(genderOfEmployee);
-                System.out.println("age: " + ageOfEmployee);
-                System.out.println("City: " +cityIdOfEmployee);
+            // 3. Получение списка всех объектов Employee из базы
+            List<Employee> employees = employeeDAO.getAllEmployee();
+            for (Employee employee : employees) {
+                System.out.println(employee);
             }
+
+            // 2. Получение конкретного объекта Employee по id
+            System.out.println(employeeDAO.getById(7));
+
+            // 1. Создание(добавление) сущности Employee в таблицу
+            Employee Pushkin = new Employee(1,"Aleksandr", "Pushkin","Male", 55,1);
+            City Surgut = new City(4,"Surgut");
+            employeeDAO.create(Pushkin);
+
         }
 
 
